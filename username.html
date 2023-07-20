@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>User Name Generate</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>User Name Generate</h1>
+        <p>Enter a Name</p>
+        <input type="text" id="name" />
+
+        <button id="btn" onclick="myFunction()" style="margin: 01cm;">Give me a UserName</button>
+        <br>
+        <br>
+        <div id="result"></div>
+
+        <h3><a href="./main.html">Home</a></h3>
+    </div>
+
+    <script>
+        function myFunction() {
+            try {
+                if (document.getElementById("name").value) {
+
+                    let name1 = document.getElementById("name").value;
+                    let rand = Math.floor((Math.random() * 1000) + 1);
+                    let result1 = name1 + rand;
+                    document.getElementById("result").innerHTML = `Your username is: ${result1}`;
+                }
+                else {
+                    alert("Enter your name");
+                }
+            } catch (err) { alert("Enter your name"); }
+        }
+
+    </script>
+
+
+</body>
+
+</html>

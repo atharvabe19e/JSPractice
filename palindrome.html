@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Palindrome Finder</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Palindrome Finder</h1>
+        <p>Enter a positive number</p>
+        <input type="text" id="pali" />
+
+        <button id="btn" onclick="myFunction()" style="margin: 01cm;">Calculate</button>
+        <br>
+        <br>
+        <div id="result"></div>
+        <br>
+        <br>
+        <h3><a href="./main.html">Home</a></h3>
+    </div>
+
+    <script>
+        function myFunction() {
+            try{
+              let  isnum=document.getElementById("pali").value
+            if (isNAN(isnum)){
+
+                
+                let innum = parseInt(isnum);
+
+                let result = document.getElementById("result");
+
+                if (isNaN(innum) || innum < 1) {
+                   alert("Provide a valid positive number!");
+                }
+                else {
+                    let number = innum;
+                    let result1 = 0;
+
+                    while (number > 0) {
+                        temp = number % 10;
+                        result1 = result1 * 10 + temp;
+                        number = Math.floor(number / 10);
+                    }
+
+                    if(innum === result1){
+                        result.innerHTML ='Number is Palindrome';
+                    }
+                    else{
+                        result.innerHTML ='Number is not Palindrome';
+                    }
+                }
+            }
+            else {
+                alert("Enter a number");
+            }
+        }
+        catch(err){
+            alert("Provide a valid positive number!");
+        }}
+    </script>
+
+
+</body>
+
+</html>
